@@ -1,12 +1,138 @@
-﻿<Window x:Class="hmsProject.DocMain"
+﻿<Window x:Name="winDocMain" x:Class="hmsProject.DocMain"  WindowStartupLocation="CenterScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:hmsProject"
         mc:Ignorable="d"
-        Title="DocMain" Height="450" Width="800">
+        Title="DocMain" Height="743.2" Width="1099.2">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="615*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblCrtPatient" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,-80,0,0" Height="28" Width="202"/>
+        <TabControl HorizontalAlignment="Left" Height="694" Grid.RowSpan="2" VerticalAlignment="Top" Width="1073" Margin="10,10,0,0">
+            <TabItem x:Name="tbPatient" Header="PATIENT">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="images/docMain.jpg"/>
+                    </Grid.Background>
+                    <Button x:Name="btnPrev" Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="461,84,0,0" Height="46" FontWeight="Light" FontSize="20" RenderTransformOrigin="1.435,0.657"/>
+                    <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="461,25,0,0" Height="46" FontWeight="Light" FontSize="20"/>
+                    <GroupBox x:Name="grpCurrentPatient" Header="Patient Demographics" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="428" Margin="614,15,0,0" BorderBrush="#FF4F91B9" Foreground="#FF1026CD" Background="White">
+                        <Grid>
+                            <Label Content="NAME:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,0,0" Height="28" Width="66"/>
+                            <Label Content="SURNAME:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,43,0,0" Width="76"/>
+                            <Label Content="Order No:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,105,0,0" Width="66"/>
+                            <Label Content="T.C. Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,74,0,0" Width="76"/>
+                            <Label Content="Age:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="258,12,0,0" Width="46"/>
+                            <Label Content="Gender:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,43,0,0" Width="54"/>
+                            <Label x:Name="lblPatientName" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,12,0,0"/>
+                            <Label x:Name="lblPatientSurname" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,43,0,0"/>
+                            <Label x:Name="lblPatientTC" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,74,0,0"/>
+                            <Label x:Name="lblPatientOrder" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="138,105,0,0"/>
+                            <Label x:Name="lblPatientAge" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="325,12,0,0" RenderTransformOrigin="0.5,0.5" Width="80"/>
+                            <Label x:Name="lblPatientGender" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="316,43,0,0" RenderTransformOrigin="0.5,0.5" Width="89"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Medicine" HorizontalAlignment="Left" Height="279" VerticalAlignment="Top" Width="480" Margin="10,199,0,0" BorderBrush="#FF126394">
+                        <Grid HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="470" Margin="0,0,-2.8,0">
+                            <ComboBox x:Name="cboMedType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,27,0,0" Height="29"/>
+                            <ComboBox x:Name="cboMedName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,61,0,0" Height="26"/>
+                            <ComboBox x:Name="cboMedDosage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,92,0,0" Height="26"/>
+
+                            <Label Content="TYPE:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,30,0,0" Height="26" Width="37"/>
+                            <Label Content="NAME:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,61,0,0"/>
+                            <Label x:Name="lblMedDosage" Content="DOSAGE:" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="57"/>
+                            <Label x:Name="lblMedBarcode" Content="" HorizontalAlignment="Left" Margin="20,2,0,0" VerticalAlignment="Top" Width="194"/>
+                            <TextBox x:Name="txtMedAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="19"/>
+                            <Button x:Name="btnAddMed" Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Margin="241,183,0,0" Height="29"/>
+                            <Button x:Name="btnDelMed" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="316,183,0,0" Height="29"/>
+                            <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" Margin="254,220,0,0" VerticalAlignment="Top" Width="206"/>
+                            <ListView x:Name="lvMedInfo" HorizontalAlignment="Left" Height="168" VerticalAlignment="Top" Width="219" Margin="241,10,0,0">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="AMOUNT" DisplayMemberBinding="{Binding Amount}" Width="40"/>
+                                        <GridViewColumn Header="NAME" DisplayMemberBinding="{Binding Name}" Width="80"/>
+                                        <GridViewColumn Header="TYPE" DisplayMemberBinding="{Binding Type}" Width="90"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                            <ScrollViewer HorizontalAlignment="Left" Height="123" VerticalAlignment="Top" Width="220" Margin="11,123,0,0">
+                                <TextBlock x:Name="txtBlckMedDescription" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Description:" VerticalAlignment="Top" Height="157" Width="203"/>
+                            </ScrollViewer>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Waiting Patients" HorizontalAlignment="Left" Height="165" VerticalAlignment="Top" Width="456" Margin="0,15,0,0">
+                        <Grid HorizontalAlignment="Left" Height="139" VerticalAlignment="Top" Width="446" Margin="0,0,-2.8,0">
+                            <ListView x:Name="lvPatientInfo" Height="129" VerticalAlignment="Top" Margin="0,10,0,0" HorizontalAlignment="Left" Width="446">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Order" DisplayMemberBinding="{Binding Order}" Width="40"/>
+                                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="80"/>
+                                        <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" Width="90"/>
+                                        <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}" Width="40"/>
+                                        <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" Width="50"/>
+                                        <GridViewColumn Header="TC" DisplayMemberBinding="{Binding TCNum}" Width="60"/>
+                                        <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" Width="60"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Grid>
+                    </GroupBox>
+                    <TextBox x:Name="txtDocComments" HorizontalAlignment="Left" Height="161" TextWrapping="Wrap" Text="Comments here..." VerticalAlignment="Top" Width="480" Margin="10,495,0,0"/>
+                    <GroupBox Header="PAST" HorizontalAlignment="Left" Height="445" Margin="784,211,0,0" VerticalAlignment="Top" Width="258">
+                        <Grid HorizontalAlignment="Left" Height="427" VerticalAlignment="Top" Width="248" Margin="0,0,-3.2,-4.6">
+                            <ComboBox x:Name="cboPatPrevDate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="64,18,0,0" Height="34"/>
+                            <Label x:Name="lblPatientPast" Content="DATE:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,18,0,0" Width="49" FontFamily="Segoe UI Light" FontSize="16" Height="34"/>
+                            <Label x:Name="lblPrevMed" Content="Previously used medicine(s):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,74,0,0" Width="160"/>
+                            <ScrollViewer HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="217" Margin="21,105,0,0">
+                                <TextBlock x:Name="tblPrevMeds" TextWrapping="Wrap" Text="" Height="148"/>
+                            </ScrollViewer>
+                            <Label Content="Comments: " HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,218,0,0" Width="73"/>
+                            <ScrollViewer HorizontalAlignment="Left" Height="117" VerticalAlignment="Top" Width="217" Margin="21,248,0,0">
+                                <TextBlock x:Name="tblPrevComm" TextWrapping="Wrap" Text="" Height="238"/>
+                            </ScrollViewer>
+                            <Button x:Name="btnDelete" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="19,370,0,-20" Height="52" FontSize="18" FontFamily="Segoe UI Light"/>
+                        </Grid>
+                    </GroupBox>
+                    <Button x:Name="btnPatientSave" Content="SAVE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Margin="518,596,0,0" Height="60" FontSize="24" FontFamily="Segoe UI Light"/>
+                    <Button x:Name="btnOpenWaiting" Content="Waiting Screen" HorizontalAlignment="Left" Margin="637,596,0,0" VerticalAlignment="Top" Width="128" Height="60" FontSize="18" FontFamily="Segoe UI Light"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tbLog" Header="LOG">
+                <TabItem.Background>
+                    <ImageBrush/>
+                </TabItem.Background>
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="images/docMain.jpg"/>
+                    </Grid.Background>
+                    <Label Content="Today's Patients are:" HorizontalAlignment="Left" Height="44" Margin="46,43,0,0" VerticalAlignment="Top" Width="235" FontSize="24"/>
+                    <ListView x:Name="lvLogPatient" HorizontalAlignment="Left" Height="564" Margin="46,92,0,0" VerticalAlignment="Top" Width="515">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Order" DisplayMemberBinding="{Binding Order}" Width="40"/>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="90"/>
+                                <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" Width="100"/>
+                                <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}" Width="50"/>
+                                <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" Width="50"/>
+                                <GridViewColumn Header="TC" DisplayMemberBinding="{Binding TCNum}" Width="100"/>
+                                <GridViewColumn Header="Priority" DisplayMemberBinding="{Binding Priority}" Width="80"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label x:Name="lblDate" Content="DATE:" HorizontalAlignment="Left" Margin="694,43,0,0" VerticalAlignment="Top" Height="37" Width="73" FontSize="20"/>
+                    <ComboBox x:Name="cboDate" HorizontalAlignment="Left" Margin="772,49,0,0" VerticalAlignment="Top" Width="130" Height="25"/>
+                    <Label x:Name="lblPrevMeds" Content="Previously Used Medicine(s):" HorizontalAlignment="Left" Margin="726,107,0,0" VerticalAlignment="Top" Width="176"/>
+                    <ScrollViewer HorizontalAlignment="Left" Height="108" Margin="732,143,0,0" VerticalAlignment="Top" Width="231">
+                        <TextBlock x:Name="tblMeds" TextWrapping="Wrap" Height="156"/>
+                    </ScrollViewer>
+                    <Label x:Name="lblComm" Content="Comments:" HorizontalAlignment="Left" Margin="732,281,0,0" VerticalAlignment="Top" Width="71"/>
+                    <TextBlock x:Name="tblComm" HorizontalAlignment="Left" Margin="744,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="307" Width="314"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

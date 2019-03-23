@@ -9,23 +9,20 @@
     <Window.Background>
         <ImageBrush ImageSource="images/mainWindow.jpg"/>
     </Window.Background>
-    <Grid Margin="0,0,-0.4,-1.2">
-        <Grid.Background>
-            <ImageBrush/>
-        </Grid.Background>
-        <Button x:Name="btnSec" Content="" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="227" Height="180">
+    <Grid>
+        <Button x:Name="btnSec" Content="SECRETARY" HorizontalAlignment="Left" Margin="55,44,0,0" VerticalAlignment="Top" Width="172" Height="124" FontSize="32" VerticalContentAlignment="Bottom" Foreground="#FFEE5E00" FontWeight="ExtraLight">
             <Button.Background>
                 <ImageBrush ImageSource="images/Registration.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnDoc" Content="" HorizontalAlignment="Left" Margin="283,22,0,0" VerticalAlignment="Top" Width="227" Height="180">
+        <Button x:Name="btnAdmin" Content="ADMIN" HorizontalAlignment="Left" Margin="554,47,0,0" VerticalAlignment="Top" Width="172" Height="124" FontSize="36" VerticalContentAlignment="Bottom" Foreground="#FFF40606" FontWeight="ExtraLight">
             <Button.Background>
-                <ImageBrush ImageSource="images/doctor.jpg" Stretch="Uniform"/>
+                <ImageBrush ImageSource="images/admin.jpg" Stretch="UniformToFill"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnAdmin" Content="" HorizontalAlignment="Left" Margin="557,22,0,0" VerticalAlignment="Top" Width="227" Height="180">
+        <Button x:Name="btnDoc" Content="DOCTOR" HorizontalAlignment="Left" VerticalAlignment="Top" Width="172" Margin="313,47,0,0" Height="124" FontWeight="ExtraLight" FontSize="36" VerticalContentAlignment="Bottom" Foreground="#FF0132FF" Click="BtnDoctor_Click">
             <Button.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="images/admin.jpg"/>
+                <ImageBrush ImageSource="images/doctor.jpg" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 

@@ -24,5 +24,12 @@ namespace hmsProject
         {
             InitializeComponent();
         }
+
+        private void BtnDoctor_Click(object sender, RoutedEventArgs e)
+        {
+            DocLogin docLog = new DocLogin();
+            docLog.Show();
+        }
+
     }
 }
