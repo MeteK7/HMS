@@ -31,5 +31,10 @@ namespace hmsProject
             docLog.Show();
         }
 
+        private void BtnAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            AdminScreen adminPage = new AdminScreen();
+            adminPage.Show();
+        }
     }
 }

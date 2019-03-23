@@ -1,0 +1,76 @@
+﻿<Window x:Class="hmsProject.AdminScreen"  WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hmsProject"
+        mc:Ignorable="d"
+        Title="AdminScreen" Height="587.6" Width="911.6">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="558" VerticalAlignment="Top" Width="906" Margin="0,0,-0.4,-0.4">
+            <TabItem Header="Medicine" Margin="-2,0,-2.2,0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Add a Medicine Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,18,0,0" Height="25" Width="128" RenderTransformOrigin="0.773,0.296"/>
+                    <TextBox x:Name="txtMedType" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="733,48,0,0"/>
+                    <Button x:Name="btnAddMedType" Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="759,97,0,0" Height="25" FontWeight="Light" FontSize="14"/>
+                    <Label Content="Add a Medicine:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="128" RenderTransformOrigin="0.467,1.07"/>
+                    <TextBox x:Name="txtMedName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="138,13,0,0"/>
+                    <Label Content="Type of this medicine:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0" Width="128"/>
+                    <ComboBox x:Name="cboMedType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="138,44,0,0"/>
+                    <Label x:Name="lblDosage" Content="Dosage:" HorizontalAlignment="Left" Margin="13,67,0,0" VerticalAlignment="Top" Width="93"/>
+                    <TextBox x:Name="txtDosage" HorizontalAlignment="Left" Height="23" Margin="138,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="lblBarcode" Content="Barcode:" HorizontalAlignment="Left" Margin="13,98,0,0" VerticalAlignment="Top" Width="73"/>
+                    <TextBox x:Name="txtBarcode" HorizontalAlignment="Left" Height="23" Margin="138,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,128,0,0" Width="96"/>
+                    <TextBox x:Name="txtMedDescription" HorizontalAlignment="Left" Height="124" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Margin="99,128,0,0"/>
+                    <Button x:Name="btnAddMed" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="13,284,0,0" Height="59" FontSize="16" FontWeight="Light"/>
+                    <Button x:Name="btnUpdateMed" Content="Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="99,284,0,0" Height="59" FontSize="16" FontWeight="Light"/>
+                    <Button x:Name="btnDelMed" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="190,284,0,0" Height="59" FontSize="16" FontWeight="Light"/>
+                    <DataGrid x:Name="dataGridMedInfo" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="451" Margin="268,10,0,0" ItemsSource="{Binding ''}" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="100" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="100" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Dosage}" Header="Dosage" Width="100" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Barcode}" Header="Barcode" Width="150" IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Secretary" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="73" Margin="-2.2,0,0,-2">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridSecInfo" HorizontalAlignment="Left" Height="484" VerticalAlignment="Top" Width="626" Margin="250,36,0,0" ItemsSource="{Binding ''}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="130" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Surname}" Header="Surname" Width="130" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Phone}" Header="Phone" Width="120" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding TCNumber}" Header="TCNum" Width="120" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Clinic}" Header="Clinic" Width="130" IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnAddSec" Content="Add a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,36,0,0" Height="36" FontSize="14" FontWeight="Light"/>
+                    <Button x:Name="btnDelSec" Content="Delete a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,97,0,0" Height="36" FontSize="14" FontWeight="Light"/>
+                    <Button x:Name="btnUpdateSec" Content="Update a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,161,0,0" Height="36" FontSize="14" FontWeight="Light"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Doctor" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="81" Margin="-2,0,0,-0.6">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="btnAddDoc" Content="Add a Doctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,36,0,0" Height="66" FontSize="14" FontWeight="Light"/>
+                    <Button x:Name="btnDelDoc" Content="Delete a Doctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,125,0,0" Height="66" FontSize="14" FontWeight="Light"/>
+                    <DataGrid x:Name="dataGridDocInfo" HorizontalAlignment="Left" Height="484" VerticalAlignment="Top" Width="626" Margin="250,36,0,0" ItemsSource="{Binding ''}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="120" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Surname}" Header="Surname" Width="120" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Phone}" Header="Phone" Width="120" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding TCNumber}" Header="TCNum" Width="130" IsReadOnly="True" />
+                            <DataGridTextColumn Binding="{Binding Major}" Header="Major" Width="150" IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="btnUpdateDoc" Content="Update a Doctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,221,0,0" Height="66" FontSize="14" FontWeight="Light"/>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
