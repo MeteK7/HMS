@@ -1,20 +1,24 @@
-﻿<Window x:Class="hmsProject.DocLogin"
+﻿<Window x:Class="hmsProject.DocLogin"  WindowStartupLocation="CenterScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:hmsProject"
         mc:Ignorable="d"
-        Title="DocLogin" Height="542.278" Width="444.557">
+        Title="Login" Height="493.067" Width="371.733">    
     <Window.Background>
         <ImageBrush ImageSource="images/docLogin.jpg"/>
     </Window.Background>
     <Grid>
-        <TextBox x:Name="txtDocName" HorizontalAlignment="Left" Height="49" Margin="111,57,0,0" TextWrapping="Wrap" Text="NAME" VerticalAlignment="Top" Width="222" FontSize="36" TextAlignment="Center" FontWeight="ExtraLight" Foreground="#FFB7A9A9"/>
-        <TextBox x:Name="txtDocSName" HorizontalAlignment="Left" Height="49" Margin="111,142,0,0" TextWrapping="Wrap" Text="SURNAME" VerticalAlignment="Top" Width="222" FontSize="36" FontWeight="ExtraLight" TextAlignment="Center" Foreground="#FFB7A9A9"/>
-        <PasswordBox x:Name="pswDoc" HorizontalAlignment="Left" Margin="111,228,0,0" VerticalAlignment="Top" Height="55" Width="222"/>
-        <Button x:Name="btnPassRequ" Content="Forgot Password?" HorizontalAlignment="Left" Margin="111,317,0,0" VerticalAlignment="Top" Width="222" Height="35" Background="White" BorderBrush="#FFC52121" Foreground="#FF1E24AB" FontSize="16"/>
-        <Button x:Name="btnDocLogin" Content="Button" HorizontalAlignment="Left" Margin="155,416,0,-61" VerticalAlignment="Top" Width="126" Height="65" FontSize="36" FontWeight="ExtraLight"/>
-
+        <TextBox x:Name="txtDocName" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" Margin="83,37,0,0" Text="NAME" FontSize="24" BorderBrush="#FF0D46F3" Foreground="#FFC2BABA" GotFocus="txtDocName_GotFocus" Cursor="None" TextAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="txtDocSName" HorizontalAlignment="Left" Height="45" TextWrapping="Wrap" Text="SURNAME" VerticalAlignment="Top" Width="202" Margin="83,129,0,0" TextAlignment="Center" FontSize="24" Foreground="#FFC2BABA" BorderBrush="#FF0C46F0" GotFocus="txtDocSName_GotFocus" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
+        <PasswordBox x:Name="pswDoc" HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="202" Margin="83,215,0,0" Password="" GotFocus="pswDoc_GotFocus"/>
+        <Button x:Name="btnPassRequ" Content="Forgot Password?" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="149" Margin="111,0,0,145.2" Foreground="#FF162BC7" BorderBrush="#FFD71616" Click="btnPassRequ_Click">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnDocLogin" Content="LOGIN" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Margin="133,359,0,0" Height="43" FontSize="20" Click="btnDocLogin_Click"/>
+        <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="38,422,0,0" Width="296" Height="38" FontSize="18" Foreground="#FFF61818" FontFamily="Segoe UI Light"/>
     </Grid>
 </Window>
