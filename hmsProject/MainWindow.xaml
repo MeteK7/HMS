@@ -15,7 +15,7 @@
                 <ImageBrush ImageSource="images/Registration.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button x:Name="btnAdmin" Content="ADMIN" HorizontalAlignment="Left" Margin="554,47,0,0" VerticalAlignment="Top" Width="172" Height="124" FontSize="36" VerticalContentAlignment="Bottom" Foreground="#FFF40606" FontWeight="ExtraLight">
+        <Button x:Name="btnAdmin" Content="ADMIN" HorizontalAlignment="Left" Margin="554,47,0,0" VerticalAlignment="Top" Width="172" Height="124" FontSize="36" VerticalContentAlignment="Bottom" Foreground="#FFF40606" FontWeight="ExtraLight"  Click="BtnAdmin_Click">
             <Button.Background>
                 <ImageBrush ImageSource="images/admin.jpg" Stretch="UniformToFill"/>
             </Button.Background>

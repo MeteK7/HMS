@@ -55,12 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminScreen.xaml.cs">
+      <DependentUpon>AdminScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DocLogin.xaml.cs">
       <DependentUpon>DocLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sec_login.xaml.cs">
       <DependentUpon>Sec_login.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DocLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
