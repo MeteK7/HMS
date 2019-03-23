@@ -1,0 +1,33 @@
+﻿<Window x:Class="hmsProject.MainWindow" WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hmsProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250.389" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="images/mainWindow.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,-0.4,-1.2">
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Button x:Name="btnSec" Content="" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="227" Height="180">
+            <Button.Background>
+                <ImageBrush ImageSource="images/Registration.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnDoc" Content="" HorizontalAlignment="Left" Margin="283,22,0,0" VerticalAlignment="Top" Width="227" Height="180">
+            <Button.Background>
+                <ImageBrush ImageSource="images/doctor.jpg" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnAdmin" Content="" HorizontalAlignment="Left" Margin="557,22,0,0" VerticalAlignment="Top" Width="227" Height="180">
+            <Button.Background>
+                <ImageBrush Stretch="Uniform" ImageSource="images/admin.jpg"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
