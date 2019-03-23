@@ -58,6 +58,9 @@
     <Compile Include="DocLogin.xaml.cs">
       <DependentUpon>DocLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sec_login.xaml.cs">
+      <DependentUpon>Sec_login.xaml</DependentUpon>
+    </Compile>
     <Page Include="DocLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +84,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Sec_login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -108,7 +115,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\logback.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="images\admin.jpg" />
     <Resource Include="images\docLogin.jpg" />
@@ -117,6 +126,9 @@
     <Resource Include="images\mainWindow.jpg" />
     <Resource Include="images\Registration.png" />
     <Resource Include="images\waitingRoom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
