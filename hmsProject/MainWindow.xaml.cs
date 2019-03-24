@@ -36,5 +36,11 @@ namespace hmsProject
             AdminScreen adminPage = new AdminScreen();
             adminPage.Show();
         }
+
+        private void btnSec_Click(object sender, RoutedEventArgs e)
+        {
+            Sec_login sec_Login = new Sec_login();
+            sec_Login.Show();
+        }
     }
 }
