@@ -37,3 +37,6 @@ C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\hmsProject.csproj.CoreCompileInp
 C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\hmsProject.exe
 C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\hmsProject.pdb
 C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\Sec_login.g.cs
+C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\Sec_login.baml
+C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\Register_page.g.cs
+C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\Register_page.baml
