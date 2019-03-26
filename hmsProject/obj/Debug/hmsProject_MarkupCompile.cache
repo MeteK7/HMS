@@ -12,9 +12,13 @@ DEBUG;TRACE
 C:\Users\teynu\Desktop\Projem\HMS\hmsProject\App.xaml
 529100125
 
+<<<<<<< HEAD
 9-11785793
+=======
+111675011388
+>>>>>>> meteBranch
 131569487696
 AdminScreen.xaml;DocLogin.xaml;DocMain.xaml;MainWindow.xaml;Sec_login.xaml;
 
-False
+True
 
