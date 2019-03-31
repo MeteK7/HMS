@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\MeteK\source\repos\HMS\hmsProject\obj\Debug\
+=======
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\
+>>>>>>> master
 hmsProject
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\MeteK\source\repos\HMS\hmsProject\App.xaml
 6-655006725
 
 10373175249
 131569487696
+=======
+C:\Users\teynu\Desktop\as\HMS\hmsProject\App.xaml
+6-655006725
+
+10373175249
+14770198071
+>>>>>>> master
 AdminScreen.xaml;DocLogin.xaml;DocMain.xaml;MainWindow.xaml;Register_page.xaml;Sec_login.xaml;
 
 False

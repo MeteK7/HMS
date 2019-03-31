@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\MeteK\source\repos\hmsProject\hmsProject\bin\Debug\hmsProject.exe.config
 C:\Users\MeteK\source\repos\hmsProject\hmsProject\bin\Debug\hmsProject.exe
 C:\Users\MeteK\source\repos\hmsProject\hmsProject\bin\Debug\hmsProject.pdb
@@ -108,3 +109,34 @@ C:\Users\MeteK\source\repos\HMS\hmsProject\obj\Debug\hmsProject.csproj.GenerateR
 C:\Users\MeteK\source\repos\HMS\hmsProject\obj\Debug\hmsProject.csproj.CoreCompileInputs.cache
 C:\Users\MeteK\source\repos\HMS\hmsProject\obj\Debug\hmsProject.exe
 C:\Users\MeteK\source\repos\HMS\hmsProject\obj\Debug\hmsProject.pdb
+=======
+C:\Users\teynu\Desktop\as\HMS\hmsProject\bin\Debug\hmsProject.exe.config
+C:\Users\teynu\Desktop\as\HMS\hmsProject\bin\Debug\hmsProject.exe
+C:\Users\teynu\Desktop\as\HMS\hmsProject\bin\Debug\hmsProject.pdb
+C:\Users\teynu\Desktop\as\HMS\hmsProject\bin\Debug\MySql.Data.dll
+C:\Users\teynu\Desktop\as\HMS\hmsProject\bin\Debug\Google.Protobuf.dll
+C:\Users\teynu\Desktop\as\HMS\hmsProject\bin\Debug\MySql.Data.xml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.csprojAssemblyReference.cache
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\AdminScreen.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\DocLogin.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\DocMain.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\MainWindow.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\Register_page.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\Sec_login.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\App.g.cs
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject_MarkupCompile.cache
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject_MarkupCompile.lref
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\AdminScreen.baml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\DocLogin.baml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\DocMain.baml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\MainWindow.baml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\Register_page.baml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\Sec_login.baml
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.g.resources
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.Properties.Resources.resources
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.csproj.GenerateResource.cache
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.csproj.CoreCompileInputs.cache
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.csproj.CopyComplete
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.exe
+C:\Users\teynu\Desktop\as\HMS\hmsProject\obj\Debug\hmsProject.pdb
+>>>>>>> master
