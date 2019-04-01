@@ -12,7 +12,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Label Content="Add a Medicine Type:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="733,18,0,0" Height="25" Width="128" RenderTransformOrigin="0.773,0.296"/>
                     <TextBox x:Name="txtMedType" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="733,48,0,0"/>
-                    <Button x:Name="btnAddMedType" Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="759,97,0,0" Height="25" FontWeight="Light" FontSize="14"/>
+                    <Button x:Name="btnAddMedType" Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Margin="759,97,0,0" Height="25" FontWeight="Light" FontSize="14" Click="BtnAddMedType_Click"/>
                     <Label Content="Add a Medicine:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="128" RenderTransformOrigin="0.467,1.07"/>
                     <TextBox x:Name="txtMedName" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="138,13,0,0"/>
                     <Label Content="Type of this medicine:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0" Width="128"/>
@@ -23,10 +23,10 @@
                     <TextBox x:Name="txtBarcode" HorizontalAlignment="Left" Height="23" Margin="138,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                     <Label Content="Description:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,128,0,0" Width="96"/>
                     <TextBox x:Name="txtMedDescription" HorizontalAlignment="Left" Height="124" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="164" Margin="99,128,0,0"/>
-                    <Button x:Name="btnAddMed" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="13,284,0,0" Height="59" FontSize="16" FontWeight="Light"/>
-                    <Button x:Name="btnUpdateMed" Content="Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="99,284,0,0" Height="59" FontSize="16" FontWeight="Light"/>
-                    <Button x:Name="btnDelMed" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="190,284,0,0" Height="59" FontSize="16" FontWeight="Light"/>
-                    <DataGrid x:Name="dataGridMedInfo" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="451" Margin="268,10,0,0" ItemsSource="{Binding ''}" >
+                    <Button x:Name="btnAddMed" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="13,284,0,0" Height="59" FontSize="16" FontWeight="Light" Click="BtnAddMed_Click"/>
+                    <Button x:Name="btnUpdateMed" Content="Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="99,284,0,0" Height="59" FontSize="16" FontWeight="Light" Click="BtnUpdateMed_Click"/>
+                    <Button x:Name="btnDelMed" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="190,284,0,0" Height="59" FontSize="16" FontWeight="Light" Click="BtnDelMed_Click"/>
+                    <DataGrid x:Name="dataGridMedInfo" HorizontalAlignment="Left" Height="510" VerticalAlignment="Top" Width="451" Margin="268,10,0,0" ItemsSource="{Binding ''}" SelectionChanged="DataGridMedInfo_SelectionChanged">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="100" IsReadOnly="True" />
                             <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="100" IsReadOnly="True" />
