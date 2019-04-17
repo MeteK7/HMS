@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MySql.Data.MySqlClient;
 
 namespace hmsProject
 {
@@ -24,6 +25,7 @@ namespace hmsProject
             InitializeComponent();
         }
 
+        MySqlConnection con = new MySqlConnection("Database=localhost;username=Project;password=123456;database=patient;");
 
         private void txtDocName_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -76,6 +78,27 @@ namespace hmsProject
 
         private void CheckAccount()
         {
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT * from docpage", con);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                if (txtDocName.Text == rd["firstName"].ToString() && txtDocSName.Text == rd["lastName"].ToString() && pswDoc.Password == rd["password"].ToString())
+                {
+                    string n = txtDocName.Text;
+                    string s = txtDocSName.Text;
+                    pswDoc.Password = "";
+                    lblWarning.Content = "";
+                    DocMain docM = new DocMain(n, s);
+                    docM.Show();
+                    break;
+                }
+                else
+                    lblWarning.Content = "You've entered something uncorrect.";
+            }
+
+            con.Close();
+
         }
 
         private void btnPassRequ_Click(object sender, RoutedEventArgs e)
