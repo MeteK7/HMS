@@ -21,7 +21,7 @@ namespace hmsProject
     public partial class DocMain : Window
     {
         public static string patientFullName;
-        string docFullName;
+        /*string docFullName;*/
 
         public DocMain(string n, string s)
         {

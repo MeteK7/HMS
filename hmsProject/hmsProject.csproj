@@ -62,6 +62,9 @@
     <Compile Include="DocLogin.xaml.cs">
       <DependentUpon>DocLogin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DocRegister.xaml.cs">
+      <DependentUpon>DocRegister.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register_page.xaml.cs">
       <DependentUpon>Register_page.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DocMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DocRegister.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

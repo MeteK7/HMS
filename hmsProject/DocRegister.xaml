@@ -1,0 +1,19 @@
+﻿<Window x:Class="hmsProject.DocRegister" WindowStartupLocation="CenterScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hmsProject"
+        mc:Ignorable="d"
+        Title="DocRegister" Height="549.2" Width="352.8">
+    <Grid>
+        <TextBox x:Name="txtDocName" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" VerticalAlignment="Top" Width="142" Margin="99,34,0,0" Text="NAME" FontSize="24" BorderBrush="#FF0D46F3" Foreground="#FFC2BABA" FontWeight="Thin" TextAlignment="Center" GotFocus="txtDocName_GotFocus" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="txtDocSName" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="SURNAME" VerticalAlignment="Top" Width="142" Margin="99,104,0,0" TextAlignment="Center" FontSize="24" Foreground="#FFC2BABA" BorderBrush="#FF0C46F0" GotFocus="txtDocSName_GotFocus" VerticalContentAlignment="Center" FontFamily="Segoe UI Light"/>
+        <TextBox x:Name="txtDocTC" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="T.C. NUMBER" VerticalAlignment="Top" Width="142" Margin="99,170,0,0" FontSize="24" TextAlignment="Center" Foreground="#FFC2BABA" GotFocus="txtDocTC_GotFocus" VerticalContentAlignment="Center" FontFamily="Segoe UI Light" BorderBrush="#FF0C46F0"/>
+        <TextBox x:Name="txtDocNum" HorizontalAlignment="Left" Height="36" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Width="142" Margin="99,233,0,0" TextAlignment="Center" FontSize="20" Foreground="#FFC2BABA" GotFocus="txtDocNum_GotFocus" VerticalContentAlignment="Center" FontFamily="Segoe UI Light" BorderBrush="#FF0C46F0"/>
+        <PasswordBox x:Name="pswDoc" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" Width="142" Margin="99,301,0,0" GotFocus="pswDoc_GotFocus"/>
+        <ComboBox x:Name="cboDocMajor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="99,362,0,0" Height="26"/>
+        <Button x:Name="btnDocReg" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="118,404,0,0" Height="52" FontSize="24" Background="#FFEEEEEE" Foreground="#FF3C4E4C" FontFamily="Segoe UI Light"/>
+        <TextBlock x:Name="tblDocValidity" HorizontalAlignment="Left" Margin="46,461,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="48" Width="255" Foreground="#FFF90F0F" FontSize="22"/>
+    </Grid>
+</Window>

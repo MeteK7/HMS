@@ -13,6 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
+class DoctorInfo
+{
+    public string Name { get; set; }
+    public string Surname { get; set; }
+    public string Phone { get; set; }
+    public string TCNumber { get; set; }
+    public string Major { get; set; }
+}
+
 class MedInfo
 {
     public string Name { get; set; }
@@ -33,9 +42,13 @@ namespace hmsProject
             InitializeComponent();
             DgMed();
             CboMedType();
+            CboDocName();
+            DgDoc();
         }
 
         MySqlConnection con = new MySqlConnection("Database=localhost;username=Project;password=123456;database=patient;");
+
+        bool add;
 
         private void CboMedType()
         {
@@ -46,6 +59,22 @@ namespace hmsProject
             while (readData.Read())
             {
                 cboMedType.Items.Add(readData["type"]);
+            }
+            con.Close();
+        }
+
+        private void CboDocName()
+        {
+            con.Open();
+            MySqlCommand pullData = new MySqlCommand("SELECT * FROM docpage", con);
+            MySqlDataReader readData = pullData.ExecuteReader();
+            string docFullName;
+
+            while (readData.Read())
+            {
+                docFullName = readData["firstName"].ToString() + " " + readData["lastName"].ToString();
+
+                cboDocName.Items.Add(docFullName);
             }
             con.Close();
         }
@@ -63,6 +92,19 @@ namespace hmsProject
             con.Close();
         }
 
+        public void DgDoc()
+        {
+            con.Open();
+            MySqlCommand pullData = new MySqlCommand("SELECT * FROM docpage", con);
+            MySqlDataReader readData = pullData.ExecuteReader();
+
+            while (readData.Read())
+            {
+                dataGridDocInfo.Items.Add(new DoctorInfo() { Name = readData["firstName"].ToString(), Surname = readData["lastName"].ToString(), Phone = readData["phoneNum"].ToString(), TCNumber = readData["tCNum"].ToString(), Major = readData["major"].ToString() });
+            }
+            con.Close();
+        }
+
         private void RefreshDgMed()
         {
             dataGridMedInfo.SelectedIndex = -1;
@@ -70,6 +112,12 @@ namespace hmsProject
             DgMed();
         }
 
+        private void RefreshDgDoc()
+        {
+            dataGridDocInfo.SelectedIndex = -1;
+            dataGridDocInfo.Items.Clear();
+            DgDoc();
+        }
 
         private void ClearTexts()
         {
@@ -117,6 +165,26 @@ namespace hmsProject
             }
         }
 
+        private void BtnDelDoc_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGridDocInfo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a doctor from the list.");
+            }
+            else
+            {
+                DoctorInfo doc = dataGridDocInfo.SelectedItem as DoctorInfo;
+
+                con.Open();
+                MySqlCommand delData = new MySqlCommand("DELETE FROM docpage WHERE tcnum='" + doc.TCNumber + "';", con);
+                delData.ExecuteNonQuery();
+                con.Close();
+                dataGridDocInfo.SelectedIndex = -1;
+                dataGridDocInfo.Items.Clear();
+                RefreshDgDoc();
+            }
+        }
+
         private void BtnAddMedType_Click(object sender, RoutedEventArgs e)
         {
             con.Open();
@@ -138,6 +206,14 @@ namespace hmsProject
             RefreshDgMed();
         }
 
+        private void BtnAddDoc_Click(object sender, RoutedEventArgs e)
+        {
+            add = true;
+            int tc = 0;
+            DocRegister docReg = new DocRegister(tc, add);
+            docReg.Show();
+        }
+
         private void BtnUpdateMed_Click(object sender, RoutedEventArgs e)
         {
             if (dataGridMedInfo.SelectedIndex != -1)
@@ -154,6 +230,20 @@ namespace hmsProject
             {
                 MessageBox.Show("Please select a medicine from the list firstly.");
             }
+        }
+
+        public void BtnUpdateDoc_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGridDocInfo.SelectedIndex != -1)
+            {
+                add = false;
+                DoctorInfo doc = dataGridDocInfo.SelectedItem as DoctorInfo;
+                DocRegister docReg = new DocRegister(Convert.ToInt32(doc.TCNumber), add);
+                docReg.Show();
+            }
+            else
+                MessageBox.Show("Please choose a doctor from the list.");
+
         }
 
 
