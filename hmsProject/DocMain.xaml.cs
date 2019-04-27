@@ -13,6 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
+class PatientInfo
+{
+    public string Order { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
+    public string Age { get; set; }
+    public string Gender { get; set; }
+    public string TCNum { get; set; }
+    public string Priority { get; set; }
+}
+
 class LvMedInfo
 {
     public string Amount { get; set; }
@@ -29,7 +40,7 @@ namespace hmsProject
     public partial class DocMain : Window
     {
         public static string patientFullName;
-        /*string docFullName;*/
+        string docFullName;
 
         public DocMain(string n, string s)
         {
@@ -107,7 +118,6 @@ namespace hmsProject
                 cboMedDosage.Items.Clear();
                 CboMedName();
             }
-
         }
 
         private void CboMedName_DropDownClosed(object sender, EventArgs e)
@@ -134,7 +144,22 @@ namespace hmsProject
                 txtMedAmount.IsEnabled = true;
                 btnPatientSave.IsEnabled = true;
             }
+        }
 
+        int counter;
+
+        private void LoadPatientInfo()
+        {
+            counter = 0;
+            con.Open();
+            MySqlCommand pullData = new MySqlCommand("SELECT * FROM patientinfotemp WHERE doctor = '" + docFullName + "'", con);
+            MySqlDataReader readData = pullData.ExecuteReader();
+            while (readData.Read())
+            {
+                counter = counter + 1;
+                this.lvPatientInfo.Items.Add(new PatientInfo() { Order = counter.ToString(), Name = readData["name"].ToString(), Surname = readData["surname"].ToString(), Age = readData["age"].ToString(), Gender = readData["gender"].ToString(), TCNum = readData["tcnum"].ToString(), Priority = readData["priority"].ToString() });
+            }
+            con.Close();
         }
 
         int medNameCounter = 0;
