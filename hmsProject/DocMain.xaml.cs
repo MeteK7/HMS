@@ -13,6 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 
+class LvMedInfo
+{
+    public string Amount { get; set; }
+    public string Name { get; set; }
+    public string Type { get; set; }
+    public string Barcode { get; set; }
+}
+
 namespace hmsProject
 {
     /// <summary>
@@ -128,5 +136,58 @@ namespace hmsProject
             }
 
         }
+
+        int medNameCounter = 0;
+
+        private void BtnAddMed_Click(object sender, RoutedEventArgs e)
+        {
+            lblWarning.Content = "";
+            bool add = true;
+            int outParse;
+            int tempNum = 0;
+
+            if (txtMedAmount.Text == "" || !Int32.TryParse(txtMedAmount.Text, out outParse) || Convert.ToInt16(txtMedAmount.Text) <= 0 || Convert.ToInt16(txtMedAmount.Text) > 10)
+                txtMedAmount.Text = "1";
+
+            for (int i = 0; i < medNameCounter; i++)
+            {
+                LvMedInfo md = lvMedInfo.Items.GetItemAt(i) as LvMedInfo;
+
+                if (md.Name == cboMedName.SelectedItem.ToString())
+                {
+                    tempNum = Convert.ToInt16(md.Amount) + Convert.ToInt16(txtMedAmount.Text);
+                    md.Amount = tempNum.ToString();
+                    add = false;
+                    lvMedInfo.Items.Refresh();
+                    break;
+                }
+            }
+
+            if (add == true)
+            {
+                medNameCounter++;
+                this.lvMedInfo.Items.Add(new LvMedInfo() { Amount = txtMedAmount.Text, Name = cboMedName.SelectedItem.ToString(), Type = cboMedType.SelectedItem.ToString() });
+            }
+
+        }
+
+        private void BtnDelMed_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvPatientInfo.SelectedIndex != -1)
+            {
+                medNameCounter = medNameCounter - 1;
+                lvMedInfo.Items.RemoveAt(lvMedInfo.SelectedIndex);
+                btnDelMed.IsEnabled = false;
+            }
+            else
+                lblWarning.Content = "Please choose a med from the list to delete it.";
+
+        }
+
+        private void LvMedInfo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnDelMed.IsEnabled = true;
+        }
+
     }
 }
