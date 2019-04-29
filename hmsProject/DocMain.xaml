@@ -18,8 +18,8 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="images/docMain.jpg"/>
                     </Grid.Background>
-                    <Button x:Name="btnPrev" Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="461,84,0,0" Height="46" FontWeight="Light" FontSize="20" RenderTransformOrigin="1.435,0.657"/>
-                    <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="461,25,0,0" Height="46" FontWeight="Light" FontSize="20"/>
+                    <Button x:Name="btnPrev" Content="Previous" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="461,84,0,0" Height="46" FontWeight="Light" FontSize="20" RenderTransformOrigin="1.435,0.657" Click="BtnPrev_Click"/>
+                    <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78" Margin="461,25,0,0" Height="46" FontWeight="Light" FontSize="20" Click="BtnNext_Click"/>
                     <GroupBox x:Name="grpCurrentPatient" Header="Patient Demographics" HorizontalAlignment="Left" Height="170" VerticalAlignment="Top" Width="428" Margin="614,15,0,0" BorderBrush="#FF4F91B9" Foreground="#FF1026CD" Background="White">
                         <Grid>
                             <Label Content="NAME:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,10,0,0" Height="28" Width="66"/>
@@ -38,19 +38,19 @@
                     </GroupBox>
                     <GroupBox Header="Medicine" HorizontalAlignment="Left" Height="279" VerticalAlignment="Top" Width="480" Margin="10,199,0,0" BorderBrush="#FF126394">
                         <Grid HorizontalAlignment="Left" Height="256" VerticalAlignment="Top" Width="470" Margin="0,0,-2.8,0">
-                            <ComboBox x:Name="cboMedType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,27,0,0" Height="29"/>
-                            <ComboBox x:Name="cboMedName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,61,0,0" Height="26"/>
-                            <ComboBox x:Name="cboMedDosage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,92,0,0" Height="26"/>
+                            <ComboBox x:Name="cboMedType" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,27,0,0" Height="29" DropDownClosed="CboMedType_DropDownClosed"/>
+                            <ComboBox x:Name="cboMedName" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,61,0,0" Height="26" DropDownClosed="CboMedName_DropDownClosed"/>
+                            <ComboBox x:Name="cboMedDosage" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="72,92,0,0" Height="26" DropDownClosed="CboMedDosage_DropDownClosed"/>
 
                             <Label Content="TYPE:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,30,0,0" Height="26" Width="37"/>
                             <Label Content="NAME:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,61,0,0"/>
                             <Label x:Name="lblMedDosage" Content="DOSAGE:" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="57"/>
                             <Label x:Name="lblMedBarcode" Content="" HorizontalAlignment="Left" Margin="20,2,0,0" VerticalAlignment="Top" Width="194"/>
-                            <TextBox x:Name="txtMedAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="19"/>
-                            <Button x:Name="btnAddMed" Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Margin="241,183,0,0" Height="29"/>
-                            <Button x:Name="btnDelMed" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="316,183,0,0" Height="29"/>
+                            <TextBox x:Name="txtMedAmount" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="19" Margin="214,51,0,0"/>
+                            <Button x:Name="btnAddMed" Content="ADD" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Margin="241,183,0,0" Height="29" Click="BtnAddMed_Click"/>
+                            <Button x:Name="btnDelMed" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="316,183,0,0" Height="29" Click="BtnDelMed_Click"/>
                             <Label x:Name="lblWarning" Content="" HorizontalAlignment="Left" Margin="254,220,0,0" VerticalAlignment="Top" Width="206"/>
-                            <ListView x:Name="lvMedInfo" HorizontalAlignment="Left" Height="168" VerticalAlignment="Top" Width="219" Margin="241,10,0,0">
+                            <ListView x:Name="lvMedInfo" HorizontalAlignment="Left" Height="168" VerticalAlignment="Top" Width="219" Margin="241,10,0,0" SelectionChanged="LvMedInfo_SelectionChanged">
                                 <ListView.View>
                                     <GridView>
                                         <GridViewColumn Header="AMOUNT" DisplayMemberBinding="{Binding Amount}" Width="40"/>
