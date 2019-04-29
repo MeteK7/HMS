@@ -203,6 +203,38 @@ namespace hmsProject
             txtMedAmount.Text = "1";
 
         }
+
+        private void BtnNext_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvPatientInfo.SelectedIndex != counter - 1)
+            {
+                int index = lvPatientInfo.SelectedIndex + 1;
+                clearLvPatientInfo();
+                lvPatientInfo.SelectedIndex = index;
+            }
+            else
+            {
+                clearLvPatientInfo();
+                lvPatientInfo.SelectedIndex = 0;
+            }
+            LvPatientInfo_IndexChanged();
+        }
+
+        private void BtnPrev_Click(object sender, RoutedEventArgs e)
+        {
+            if (lvPatientInfo.SelectedIndex != 0)
+            {
+                int index = lvPatientInfo.SelectedIndex - 1;
+                clearLvPatientInfo();
+                lvPatientInfo.SelectedIndex = index;
+            }
+            else
+            {
+                clearLvPatientInfo();
+                lvPatientInfo.SelectedIndex = counter - 1;
+            }
+            LvPatientInfo_IndexChanged();
+        }
         private void clearLvPatientInfo()
         {
             lvPatientInfo.Items.Clear();
