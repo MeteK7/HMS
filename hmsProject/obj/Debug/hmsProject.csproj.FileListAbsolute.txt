@@ -85,3 +85,7 @@ C:\Users\OZAN\Documents\GitHub\HMS\hmsProject\obj\Debug\hmsProject.csproj.CoreCo
 C:\Users\OZAN\Documents\GitHub\HMS\hmsProject\obj\Debug\hmsProject.csproj.CopyComplete
 C:\Users\OZAN\Documents\GitHub\HMS\hmsProject\obj\Debug\SecRegister.g.cs
 C:\Users\OZAN\Documents\GitHub\HMS\hmsProject\obj\Debug\SecRegister.baml
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\DocRegister.g.cs
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\SecRegister.g.cs
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\DocRegister.baml
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\SecRegister.baml
