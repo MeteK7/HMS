@@ -22,11 +22,11 @@
         <Label x:Name="Lb_Birth" Content="Birth" HorizontalAlignment="Left" Margin="262,138,0,0" VerticalAlignment="Top" Height="35" Width="70" RenderTransformOrigin="-1.175,0.261" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
         <Label x:Name="lb_Clinic" Content="Clinic" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="262,178,0,0" FontWeight="Bold" FontSize="20" Grid.Row="1"/>
 
-        <TextBox x:Name="Txt_TC" HorizontalAlignment="Left" Height="27" Margin="354,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.092,0.815"  MaxLength="11" Grid.RowSpan="2"/>
+        <TextBox x:Name="Txt_TC" HorizontalAlignment="Left" Height="27" Margin="354,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="1.092,0.815"  MaxLength="11" Grid.RowSpan="2" PreviewTextInput="Txt_TC_PreviewTextInput"/>
         <TextBox x:Name="Txt_name" HorizontalAlignment="Left" Height="27" Margin="354,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.479,2.511" Grid.Row="1"/>
         <TextBox x:Name="Txt_SName" HorizontalAlignment="Left" Height="27" Margin="354,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.453,3.838" Grid.Row="1" TextChanged="Txt_SName_TextChanged"/>
-        <TextBox x:Name="Txt_Phone" HorizontalAlignment="Left" Height="27" Margin="354,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.44,1.531"  MaxLength="10" Grid.Row="1"/>
-        <TextBox x:Name="Txt_Birth" HorizontalAlignment="Left" Height="27" Margin="354,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.518,6.491" MaxLength="4" Grid.Row="1"/>
+        <TextBox x:Name="Txt_Phone" HorizontalAlignment="Left" Height="27" Margin="354,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.44,1.531"  MaxLength="10" Grid.Row="1" PreviewTextInput="Txt_Phone_PreviewTextInput"/>
+        <TextBox x:Name="Txt_Birth" HorizontalAlignment="Left" Height="27" Margin="354,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.518,6.491" MaxLength="4" Grid.Row="1" PreviewTextInput="Txt_Birth_PreviewTextInput"/>
         <Button x:Name="Btn_Queue" Content="Queue" HorizontalAlignment="Left" Margin="308,62,0,0" VerticalAlignment="Top" Width="86" Height="46" Grid.Row="2"/>
         <Button x:Name="Btn_Save" Content="Save" HorizontalAlignment="Left" Margin="414,62,0,0" VerticalAlignment="Top" Width="95" Height="46" Grid.Row="2"/>
         <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="576,10,0,0" VerticalAlignment="Top" Width="208" FontSize="18" FontWeight="Bold"/>
@@ -35,6 +35,9 @@
         <ComboBox x:Name="cb_doctor" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="354,234,0,0" Grid.Row="1"/>
         <ComboBox x:Name="cb_gender" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="354,285,0,0" Grid.RowSpan="2" Grid.Row="1"/>
         <Label x:Name="lb_gender" Content="Gender" HorizontalAlignment="Left" Margin="262,282,0,0" VerticalAlignment="Top" Width="70" FontSize="18" FontFamily="Segoe UI Semibold" Grid.RowSpan="2" Grid.Row="1"/>
+        <RadioButton Content="T.C" HorizontalAlignment="Left" Margin="354,11,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <RadioButton Content="Other" HorizontalAlignment="Left" Margin="414,11,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <Label x:Name="Lb_type" Content="Type" HorizontalAlignment="Left" Margin="262,3,0,0" VerticalAlignment="Top" Height="35" Width="70" RenderTransformOrigin="-1.175,0.261" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </Window>
