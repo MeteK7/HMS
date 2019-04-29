@@ -68,6 +68,9 @@
     <Compile Include="Register_page.xaml.cs">
       <DependentUpon>Register_page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SecRegister.xaml.cs">
+      <DependentUpon>SecRegister.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sec_login.xaml.cs">
       <DependentUpon>Sec_login.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Register_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecRegister.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

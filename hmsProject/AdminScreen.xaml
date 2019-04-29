@@ -55,9 +55,9 @@
                             <DataGridTextColumn Binding="{Binding Clinic}" Header="Clinic" Width="130" IsReadOnly="True" />
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="btnAddSec" Content="Add a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,36,0,0" Height="36" FontSize="14" FontWeight="Light"/>
-                    <Button x:Name="btnDelSec" Content="Delete a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,97,0,0" Height="36" FontSize="14" FontWeight="Light"/>
-                    <Button x:Name="btnUpdateSec" Content="Update a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,161,0,0" Height="36" FontSize="14" FontWeight="Light"/>
+                    <Button x:Name="btnAddSec" Content="Add a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,36,0,0" Height="36" FontSize="14" FontWeight="Light" Click="BtnAddSec_Click"/>
+                    <Button x:Name="btnDelSec" Content="Delete a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,97,0,0" Height="36" FontSize="14" FontWeight="Light" Click="BtnDelSec_Click"/>
+                    <Button x:Name="btnUpdateSec" Content="Update a Secretary" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="46,161,0,0" Height="36" FontSize="14" FontWeight="Light" Click="BtnUpdateSec_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Doctor" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="81" Margin="-2,0,0,-0.6">

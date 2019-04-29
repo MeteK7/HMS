@@ -22,6 +22,15 @@ class DoctorInfo
     public string Major { get; set; }
 }
 
+class SecInfo
+{
+    public string Name { get; set; }
+    public string Surname { get; set; }
+    public string Phone { get; set; }
+    public string TCNumber { get; set; }
+    public string Clinic { get; set; }
+}
+
 class MedInfo
 {
     public string Name { get; set; }
@@ -105,6 +114,19 @@ namespace hmsProject
             con.Close();
         }
 
+        public void DgSec()
+        {
+            con.Open();
+            MySqlCommand pullData = new MySqlCommand("SELECT * FROM secpage", con);
+            MySqlDataReader readData = pullData.ExecuteReader();
+
+            while (readData.Read())
+            {
+                dataGridSecInfo.Items.Add(new SecInfo() { Name = readData["name"].ToString(), Surname = readData["surname"].ToString(), Phone = readData["phone"].ToString(), TCNumber = readData["tcnum"].ToString(), Clinic = readData["clinic"].ToString() });
+            }
+            con.Close();
+        }
+
         private void RefreshDgMed()
         {
             dataGridMedInfo.SelectedIndex = -1;
@@ -117,6 +139,13 @@ namespace hmsProject
             dataGridDocInfo.SelectedIndex = -1;
             dataGridDocInfo.Items.Clear();
             DgDoc();
+        }
+
+        private void RefreshDgSec()
+        {
+            dataGridSecInfo.SelectedIndex = -1;
+            dataGridSecInfo.Items.Clear();
+            DgSec();
         }
 
         private void ClearTexts()
@@ -162,6 +191,26 @@ namespace hmsProject
             else
             {
                 MessageBox.Show("Please choose a medicine from the list to delete.");
+            }
+        }
+
+        private void BtnDelSec_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGridSecInfo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please choose a secretary from the list.");
+            }
+            else
+            {
+                SecInfo sec = dataGridSecInfo.SelectedItem as SecInfo;
+
+                con.Open();
+                MySqlCommand delData = new MySqlCommand("DELETE FROM secpage WHERE tcnum='" + sec.TCNumber + "';", con);
+                delData.ExecuteNonQuery();
+                con.Close();
+                dataGridSecInfo.SelectedIndex = -1;
+                dataGridSecInfo.Items.Clear();
+                RefreshDgSec();
             }
         }
 
@@ -213,6 +262,13 @@ namespace hmsProject
             DocRegister docReg = new DocRegister(tc, add);
             docReg.Show();
         }
+        private void BtnAddSec_Click(object sender, RoutedEventArgs e)
+        {
+            add = true;
+            int tc = 0;
+            SecRegister secReg = new SecRegister(tc, add);
+            secReg.Show();
+        }
 
         private void BtnUpdateMed_Click(object sender, RoutedEventArgs e)
         {
@@ -231,7 +287,20 @@ namespace hmsProject
                 MessageBox.Show("Please select a medicine from the list firstly.");
             }
         }
-
+        private void BtnUpdateSec_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataGridSecInfo.SelectedIndex != -1)
+            {
+                add = false;
+                SecInfo sec = dataGridSecInfo.SelectedItem as SecInfo;
+                SecRegister docReg = new SecRegister(Convert.ToInt32(sec.TCNumber), add);
+                docReg.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please choose a secretary from the list.");
+            }
+        }
         public void BtnUpdateDoc_Click(object sender, RoutedEventArgs e)
         {
             if (dataGridDocInfo.SelectedIndex != -1)
