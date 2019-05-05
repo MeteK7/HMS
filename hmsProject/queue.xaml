@@ -1,0 +1,18 @@
+﻿<Window x:Class="hmsProject.queue"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hmsProject"
+        mc:Ignorable="d"
+        Title="queue" Height="452.32" Width="326.804">
+    <Grid Margin="0,0,190,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="402*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button1" Content="View" HorizontalAlignment="Left" Margin="0,380,-196,-16" VerticalAlignment="Top" Width="325" Height="39" Click="Button_Click" FontSize="16" FontWeight="Bold" Grid.RowSpan="2"/>
+        <DataGrid x:Name="grid1" Height="201" Margin="0,174,-196,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.776" SelectionChanged="grid1_SelectionChanged"/>
+        <DataGrid x:Name="grid2" Height="164" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.776" Margin="0,10,-196,0"/>
+    </Grid>
+</Window>

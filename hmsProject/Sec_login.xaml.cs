@@ -41,8 +41,12 @@ namespace hmsProject
                 sec_clnc = readdata["clinic"].ToString();
                 if (txt_Username.Text == sec_id && txt_Password.Password == sec_pass && Cb_clinic.Text == sec_clnc)
                 {
+
                     Register_page page = new Register_page();  //alınmadı
                     page.Show();
+                    page.label4.Content = txt_Username.Text;
+                    page.label4_Copy.Content = Cb_clinic.SelectedItem.ToString();
+                    this.Close();
                     trial = 1;
                     break;
                 }
