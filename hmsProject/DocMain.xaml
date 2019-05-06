@@ -13,7 +13,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="lblCrtPatient" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,-80,0,0" Height="28" Width="202"/>
         <TabControl HorizontalAlignment="Left" Height="694" Grid.RowSpan="2" VerticalAlignment="Top" Width="1073" Margin="10,10,0,0">
-            <TabItem x:Name="tbPatient" Header="PATIENT">
+            <TabItem Header="PATIENT">
                 <Grid>
                     <Grid.Background>
                         <ImageBrush ImageSource="images/docMain.jpg"/>
@@ -81,10 +81,10 @@
                             </ListView>
                         </Grid>
                     </GroupBox>
-                    <TextBox x:Name="txtDocComments" HorizontalAlignment="Left" Height="161" TextWrapping="Wrap" Text="Comments here..." VerticalAlignment="Top" Width="480" Margin="10,495,0,0"/>
+                    <TextBox x:Name="txtDocComments" HorizontalAlignment="Left" Height="161" TextWrapping="Wrap" Text="Comments here..." VerticalAlignment="Top" Width="480" Margin="10,495,0,0" GotFocus="TxtDocComments_GotFocus" LostFocus="TxtDocComments_LostFocus"/>
                     <GroupBox Header="PAST" HorizontalAlignment="Left" Height="445" Margin="784,211,0,0" VerticalAlignment="Top" Width="258">
                         <Grid HorizontalAlignment="Left" Height="427" VerticalAlignment="Top" Width="248" Margin="0,0,-3.2,-4.6">
-                            <ComboBox x:Name="cboPatPrevDate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="64,18,0,0" Height="34"/>
+                            <ComboBox x:Name="cboPatPrevDate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="164" Margin="64,18,0,0" Height="34" DropDownClosed="CboPatPrevDate_DropDownClosed"/>
                             <Label x:Name="lblPatientPast" Content="DATE:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,18,0,0" Width="49" FontFamily="Segoe UI Light" FontSize="16" Height="34"/>
                             <Label x:Name="lblPrevMed" Content="Previously used medicine(s):" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="21,74,0,0" Width="160"/>
                             <ScrollViewer HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="217" Margin="21,105,0,0">
@@ -97,11 +97,11 @@
                             <Button x:Name="btnDelete" Content="DELETE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="19,370,0,-20" Height="52" FontSize="18" FontFamily="Segoe UI Light"/>
                         </Grid>
                     </GroupBox>
-                    <Button x:Name="btnPatientSave" Content="SAVE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Margin="518,596,0,0" Height="60" FontSize="24" FontFamily="Segoe UI Light"/>
-                    <Button x:Name="btnOpenWaiting" Content="Waiting Screen" HorizontalAlignment="Left" Margin="637,596,0,0" VerticalAlignment="Top" Width="128" Height="60" FontSize="18" FontFamily="Segoe UI Light"/>
+                    <Button x:Name="btnPatientSave" Content="SAVE" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Margin="518,596,0,0" Height="60" Click="BtnPatientSave_Click" FontSize="24" FontFamily="Segoe UI Light"/>
+                    <Button x:Name="btnOpenWaiting" Content="Waiting Screen" HorizontalAlignment="Left" Margin="637,596,0,0" VerticalAlignment="Top" Width="128" Height="60" FontSize="18" FontFamily="Segoe UI Light" Click="BtnOpenWaiting_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem x:Name="tbLog" Header="LOG">
+            <TabItem Header="LOG">
                 <TabItem.Background>
                     <ImageBrush/>
                 </TabItem.Background>
@@ -109,8 +109,8 @@
                     <Grid.Background>
                         <ImageBrush ImageSource="images/docMain.jpg"/>
                     </Grid.Background>
-                    <Label Content="Today's Patients are:" HorizontalAlignment="Left" Height="44" Margin="46,36,0,0" VerticalAlignment="Top" Width="235" FontSize="24"/>
-                    <ListView x:Name="lvLogPatient" HorizontalAlignment="Left" Height="564" Margin="46,92,0,0" VerticalAlignment="Top" Width="515">
+                    <Label Content="Today's Patients are:" HorizontalAlignment="Left" Height="44" Margin="46,43,0,0" VerticalAlignment="Top" Width="235" FontSize="24"/>
+                    <ListView x:Name="lvLogPatient" HorizontalAlignment="Left" Height="564" Margin="46,92,0,0" VerticalAlignment="Top" Width="515" SelectionChanged="LvLogPatient_SelectionChanged">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Order" DisplayMemberBinding="{Binding Order}" Width="40"/>
@@ -124,7 +124,7 @@
                         </ListView.View>
                     </ListView>
                     <Label x:Name="lblDate" Content="DATE:" HorizontalAlignment="Left" Margin="694,43,0,0" VerticalAlignment="Top" Height="37" Width="73" FontSize="20"/>
-                    <ComboBox x:Name="cboDate" HorizontalAlignment="Left" Margin="772,49,0,0" VerticalAlignment="Top" Width="130" Height="25"/>
+                    <ComboBox x:Name="cboDate" HorizontalAlignment="Left" Margin="772,49,0,0" VerticalAlignment="Top" Width="130" Height="25" DropDownClosed="CboDate_DropDownClosed"/>
                     <Label x:Name="lblPrevMeds" Content="Previously Used Medicine(s):" HorizontalAlignment="Left" Margin="726,107,0,0" VerticalAlignment="Top" Width="176"/>
                     <ScrollViewer HorizontalAlignment="Left" Height="108" Margin="732,143,0,0" VerticalAlignment="Top" Width="231">
                         <TextBlock x:Name="tblMeds" TextWrapping="Wrap" Height="156"/>

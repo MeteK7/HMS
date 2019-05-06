@@ -124,3 +124,7 @@ C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\hmsProject.exe
 C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\hmsProject.pdb
 C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\queue.g.cs
 C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\queue.baml
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\queue.g.cs
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\WaitingRoomScreen.g.cs
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\queue.baml
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\WaitingRoomScreen.baml

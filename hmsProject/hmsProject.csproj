@@ -77,6 +77,9 @@
     <Compile Include="Sec_login.xaml.cs">
       <DependentUpon>Sec_login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WaitingRoomScreen.xaml.cs">
+      <DependentUpon>WaitingRoomScreen.xaml</DependentUpon>
+    </Compile>
     <Page Include="AdminScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Sec_login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WaitingRoomScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
