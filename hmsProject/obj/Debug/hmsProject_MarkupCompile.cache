@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\teynu\Desktop\HMS\hmsProject\obj\Debug\
+C:\Users\MeteK\Desktop\HMS\hmsProject\obj\Debug\
 hmsProject
 none
 false
 DEBUG;TRACE
-C:\Users\teynu\Desktop\HMS\hmsProject\App.xaml
-9404865753
+C:\Users\MeteK\Desktop\HMS\hmsProject\App.xaml
+10903560543
 
-13-1598985309
-14770198071
-AdminScreen.xaml;DocLogin.xaml;DocMain.xaml;DocRegister.xaml;MainWindow.xaml;queue.xaml;Register_page.xaml;SecRegister.xaml;Sec_login.xaml;
+14549733926
+141947463739
+AdminScreen.xaml;DocLogin.xaml;DocMain.xaml;DocRegister.xaml;MainWindow.xaml;queue.xaml;Register_page.xaml;SecRegister.xaml;Sec_login.xaml;WaitingRoomScreen.xaml;
 
 False
 
